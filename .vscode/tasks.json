@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar proyecto SFML",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-IC:/SFML-2.6.2/include",
+        "-LC:/SFML-2.6.2/lib",
+        "main.cpp",
+        "op2.cpp",
+        "op3.cpp",
+        "op4.cpp",
+        "op5.cpp",
+        "-o",
+        "main.exe",
+        "-lsfml-graphics",
+        "-lsfml-window",
+        "-lsfml-system",
+        "-mconsole"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
