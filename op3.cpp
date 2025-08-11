@@ -7,7 +7,7 @@ string FuncionGanancia(int precioDeVentaMesa, int precioDeVentaSilla) {
     string funcion = "Z = ";
 
     // Funcion para P1: Precio de Mesas
-        if (precioDeVentaMesa < 0) {
+    if (precioDeVentaMesa < 0) {
         funcion += "- " + to_string(abs(precioDeVentaMesa)) + "x1";
     } else {
         funcion += to_string(precioDeVentaMesa) + "x1";

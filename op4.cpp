@@ -3,10 +3,6 @@
 #include "Datoscompartidos.h"
 
 using namespace std;
-int puntoOptimoMesas = 0;
-int puntoOptimoSillas = 0;
-double gananciaOptima = 0.0;
-
 
 // Esta función calcula y muestra la solución óptima del problema
 void calcularSolucionOptima(double precioDeVentaMesa,
@@ -27,7 +23,6 @@ void calcularSolucionOptima(double precioDeVentaMesa,
         const int maxHorasPintura = 100;
         const int maxSillas = 60;
 
-        // Ahora se usan los coeficientes ingresados por el usuario
         int mejorCantidadMesas = 0;
         int mejorCantidadSillas = 0;
         double gananciaMaxima = 0.0;
@@ -38,7 +33,7 @@ void calcularSolucionOptima(double precioDeVentaMesa,
             for (int sillas = 0; sillas <= maxSillas; sillas++)
             {
                 int totalCarpinteria = coeficienteMesaHoras * mesas + coeficienteSillaHoras * sillas;
-                int totalPintura = 2 * mesas + 1 * sillas; // se mantiene según el enunciado
+                int totalPintura = 2 * mesas + 1 * sillas;
 
                 if (totalCarpinteria <= maxHorasCarpinteria && totalPintura <= maxHorasPintura)
                 {
@@ -53,6 +48,7 @@ void calcularSolucionOptima(double precioDeVentaMesa,
                 }
             }
         }
+        // Usar la variable global solucion (declarada en main.cpp)
         solucion.x1 = mejorCantidadMesas;
         solucion.x2 = mejorCantidadSillas;
         solucion.ganancia = gananciaMaxima;

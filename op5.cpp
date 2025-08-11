@@ -1,7 +1,7 @@
-#include <SFML/Graphics.hpp> 
-#include <vector>            
-#include <string>            
-#include <iostream>          
+#include <SFML/Graphics.hpp>
+#include <vector>
+#include <string>
+#include <iostream>
 #include "Datoscompartidos.h"
 
 // Constantes para límites y escala del gráfico
@@ -40,7 +40,7 @@ void graficarMaximizacion() {
     }
 
     // Define el origen de los ejes en la ventana
-    sf::Vector2f origin(50, 750); 
+    sf::Vector2f origin(50, 750);
 
     // Función para convertir coordenadas matemáticas a pantalla
     auto toScreen = [&](float x, float y) {
@@ -85,7 +85,7 @@ void graficarMaximizacion() {
 
     // Dibuja las líneas de las restricciones
     std::vector<sf::VertexArray> lineas;
-    std::vector<sf::Text> etiquetasRestricciones;  
+    std::vector<sf::Text> etiquetasRestricciones;
 
     // Define los colores para las líneas
     std::vector<sf::Color> colores = {
@@ -95,8 +95,8 @@ void graficarMaximizacion() {
         sf::Color::Magenta,
         sf::Color::Cyan,
         sf::Color::Yellow,
-        sf::Color(255, 165, 0),  
-        sf::Color(128, 0, 128)   
+        sf::Color(255, 165, 0),
+        sf::Color(128, 0, 128)
     };
 
     // Recorre las restricciones y dibuja cada línea con su color y etiqueta
@@ -178,12 +178,12 @@ void graficarMaximizacion() {
         // Dibuja el punto óptimo como un círculo verde
         sf::CircleShape puntoOptimo(5.f);
         puntoOptimo.setFillColor(sf::Color::Green);
-        puntoOptimo.setPosition(toScreen(solucion.x1, solucion.x2).x - 5, 
+        puntoOptimo.setPosition(toScreen(solucion.x1, solucion.x2).x - 5,
                                toScreen(solucion.x1, solucion.x2).y - 5);
         window.draw(puntoOptimo);
 
         // Etiqueta para el punto óptimo
-        sf::Text textoPunto("Punto óptimo (" + std::to_string(solucion.x1) + ", " + 
+        sf::Text textoPunto("Punto óptimo (" + std::to_string(solucion.x1) + ", " +
                             std::to_string(solucion.x2) + ")", font, 14);
         textoPunto.setFillColor(sf::Color::Green);
         textoPunto.setPosition(toScreen(solucion.x1, solucion.x2).x + 10,
